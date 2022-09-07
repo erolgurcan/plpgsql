@@ -21,17 +21,19 @@ begin
 		cnt := cnt+ 1;
 		if months = '' and cnt < len  then months := concat('"', rec.month_year, '"', ' text', ',');
 		else  
-			if cnt = 7 then months := concat(  months , '
+			if cnt = len then months := concat(  months , '
 ' ,  '"', rec.month_year, '"' , ' text');
 			else months := concat(  months , '
 ' ,  '"', rec.month_year, '"' , ' text' , ',');
 			end if;
 		end if;
 	end loop; 
-
-	raise notice '%' , final_str;
+	raise notice '%' , months;
 end;
 $function$;
+
+select public.__update_paid_cross_table();
+
 
 
 
