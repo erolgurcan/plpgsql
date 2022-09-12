@@ -1,3 +1,2 @@
 # plpgsql
-
-removes all strings or characters that are in the given regex patern and removes integer. 
+## plpgsql scripting for dinamo-anatolia db
